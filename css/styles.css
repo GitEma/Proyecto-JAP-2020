@@ -185,3 +185,21 @@ a.custom-card:hover {
   padding: 40px;
   text-align: center;
 } 
+
+.filt {
+  align-items: right;
+  text-decoration-color: floralwhite;
+  color: white;
+  padding: 0.5%;
+  padding-bottom: 0.1%;
+  border: solid lightgreen 1px;
+}
+
+#user {
+  color: floralwhite;
+  float: left;
+}
+
+#salir {
+  float: right;
+}

@@ -1,10 +1,15 @@
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const SOLD_COUNT = "soldCount.";
+const ORDER_BY_HIGH_PRICE = "cost->COST";
+const ORDER_BY_LOW_PRICE = "COST->cost";
+
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
+var buscar = undefined;
+var productsArray = [];
 
 function sortCategories(criteria, array) {
     let result = [];
@@ -20,13 +25,27 @@ function sortCategories(criteria, array) {
             if (a.name < b.name) { return 1; }
             return 0;
         });
-    } else if (criteria === ORDER_BY_PROD_COUNT) {
+    } else if (criteria === SOLD_COUNT) {
         result = array.sort(function (a, b) {
-            let aCount = parseInt(a.productCount);
-            let bCount = parseInt(b.productCount);
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
 
             if (aCount > bCount) { return -1; }
             if (aCount < bCount) { return 1; }
+            return 0;
+        });
+    } else if (criteria === ORDER_BY_HIGH_PRICE) {
+        result = array.sort(function (a, b) {
+
+            if (a.cost > b.cost) { return -1; }
+            if (a.cost < b.cost) { return 1; }
+            return 0;
+        });
+
+    } else if (criteria === ORDER_BY_LOW_PRICE) {
+        result = array.sort(function (a, b) {
+            if (a.cost < b.cost) { return -1; }
+            if (a.cost > b.cost) { return 1; }
             return 0;
         });
     }
@@ -40,7 +59,13 @@ function showCategoriesList() {
     for (let i = 0; i < currentCategoriesArray.length; i++) {
         let category = currentCategoriesArray[i];
 
-        htmlContentToAppend += `
+        if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))) {
+
+            if (buscar == undefined || category.name.toLowerCase().indexOf(buscar) != -1) {
+
+
+                htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
@@ -60,11 +85,11 @@ function showCategoriesList() {
                 </div>
             </a>
             `
+            }
+        }
+        document.getElementById("product-list-container").innerHTML = htmlContentToAppend;
     }
-
-    document.getElementById("product-list-container").innerHTML = htmlContentToAppend;
 }
-
 
 function sortAndShowCategories(sortCriteria, categoriesArray) {
     currentSortCriteria = sortCriteria;
@@ -87,6 +112,68 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok") {
             sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
         }
-
     });
+
+    document.getElementById("sortAsc").addEventListener("click", function () {
+        sortAndShowCategories(ORDER_ASC_BY_NAME);
+    });
+
+    document.getElementById("sortDesc").addEventListener("click", function () {
+        sortAndShowCategories(ORDER_DESC_BY_NAME);
+    });
+
+    document.getElementById("sortVendidos").addEventListener("click", function () {
+        sortAndShowCategories(SOLD_COUNT);
+    });
+
+    document.getElementById("sortAlto").addEventListener("click", function () {
+        sortAndShowCategories(ORDER_BY_HIGH_PRICE);
+    });
+
+    document.getElementById("sortBajo").addEventListener("click", function () {
+        sortAndShowCategories(ORDER_BY_LOW_PRICE);
+    });
+
+    document.getElementById("clearRangeFilter").addEventListener("click", function () {
+        document.getElementById("rangeFilterCountMin").value = "";
+        document.getElementById("rangeFilterCountMax").value = "";
+
+        minCount = undefined;
+        maxCount = undefined;
+
+        showCategoriesList();
+    });
+
+    document.getElementById('rangeFilterCount').addEventListener("click", function (e) {
+        minCount = document.getElementById('rangeFilterCountMin').value;
+        maxCount = document.getElementById('rangeFilterCountMax').value;
+
+        if (((minCount != undefined) && minCount != "") && (parseInt(minCount)) >= 0) {
+            minCount = parseInt(minCount);
+        } else {
+            minCount = undefined;
+        }
+
+        if (((maxCount != undefined) && maxCount != "") && (parseInt(maxCount)) >= 0) {
+            maxCount = parseInt(maxCount);
+        } else {
+            maxPag = undefined;
+        }
+        showCategoriesList();
+    });
+
+    document.getElementById('buscador').addEventListener('input', function (e) {
+        buscar = document.getElementById('buscador').value.toLowerCase();
+
+        showCategoriesList();
+    });
+
+    document.getElementById('limpBusc').addEventListener("click", function (e) {
+        document.getElementById('buscador').value = '';
+
+        buscar = undefined;
+
+        showCategoriesList();
+    });
+
 });

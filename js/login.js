@@ -12,8 +12,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
             alert("¡Debes ingresar los datos!");
         }
         if (camposCompletos) {
+
+            localStorage.setItem('User-Logged', JSON.stringify({ email: inputEmail.value }));
             window.location = 'home.html';
+
+
         }
+
     });
 
 });
