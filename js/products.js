@@ -9,7 +9,6 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 var buscar = undefined;
-var productsArray = [];
 
 function sortCategories(criteria, array) {
     let result = [];
