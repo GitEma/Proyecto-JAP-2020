@@ -47,11 +47,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let userLogged = localStorage.getItem('User-Logged');
   let infoUser = document.getElementById('info-user')
   let user = document.getElementById('user');
+  let salir = document.getElementById('salir')
+  let iniciar = document.getElementById('LogIn')
 
   if (userLogged) {
     userLogged = JSON.parse(userLogged);
     user.innerText = user.innerText + 'User Logged In: ' + userLogged.email;
     infoUser.style = "display: inline-block";
+    salir.style = "display: inline-block"
+    iniciar.style = "display: none;";
   }
 
   document.getElementById('salir').addEventListener("click", function (e) {
