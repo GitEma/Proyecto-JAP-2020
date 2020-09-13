@@ -89,10 +89,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     
     document.getElementById('enviarComm').addEventListener("click", function(e) {
+
+        let now = new Date();
+
+        let dateTime = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} `;
+        dateTime += `${now.getHours()}-${now.getMinutes()}-${now.getSeconds()} `;
+
+
         let newComment = {
             score: parseInt(document.getElementById('newCal').value),
             description: document.getElementById('newComm').value,
-            user: JSON.parse(localStorage.getItem('User-Logged')).email
+            user: JSON.parse(localStorage.getItem('User-Logged')).email,
+            dateTime: dateTime
         };
         comentariosArray.push(newComment);
     
