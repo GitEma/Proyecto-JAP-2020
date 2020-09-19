@@ -221,3 +221,9 @@ a.custom-card:hover {
 .checked {
   color: lime;
 }
+
+.related-style {
+  border: solid lightblue 1px;
+  background-color: lightcyan;
+  padding: 15px;
+}

@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     user.style = "display: inline-block"
     
     salir.style = "display: inline-block"
-    iniciar.style = "display: none;";
-  }
+    
+  } else { iniciar.style = "display: inline-block;"; }
 
   document.getElementById('salir').addEventListener("click", function (e) {
     localStorage.removeItem('User-Logged');
