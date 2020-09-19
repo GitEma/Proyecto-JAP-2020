@@ -40,12 +40,15 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="py-2 d-none d-md-inline-block flex-column" id="info-user" style="display: none;">
-        <p id="user">
-        </p>
-        <button class="btn btn-light btn-link p-1" id="salir" style="display: none;">Salir.</button>
-        <button class="btn-link btn text-muted" id="LogIn" style="display: inline-block;" onclick="window.location = 'index.html';">Iniciar sesión.</button>
+      <div class="dropdown d-md-inline-block" id="info-user" style="display: none;">
+        <button id="user" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Perfil.</a>
+          <a id="micart" class="dropdown-item" href="cart.html">Mi carrito.</a>
+          <button class="dropdown-item btn btn-light btn-link p-1" id="salir" style="display: none;">Salir.</button>
+        </div>
       </div>
     </div>
   </nav>
