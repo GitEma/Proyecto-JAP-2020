@@ -32,7 +32,7 @@ function showCart(array) {
 
         contenido += `
     <tr>
-         <td><img src='${cart.src}' widith="50px"</td>
+         <td><img src='${cart.src}' class="img img-thumbnail" style="width:150px;"></td>
          <td>${cart.name}</td>
 
          <td>${cart.unitCost}</td>
