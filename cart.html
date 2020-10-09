@@ -13,6 +13,13 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
   <style>
+    #tabla {
+      border: solid 2px skyblue;
+      background-color: lightsteelblue;
+
+
+    }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -26,6 +33,11 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+    }
+
+    .envioYTot {
+      border: solid lightgreen 1px;
+      background-color: white;
     }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,14 +64,122 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <!--Carrito-->
+
+  <div id="tabla" class="text-center container p-5 flex-md-row">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Moneda</th>
+          <th>Unidades</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody id="cart"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Costo total:</td>
+          <td id="total"> </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <hr>
+
+    <div class="text-left">
+
+      <h4>Tipo de envío</h4>
+
+      <input id="premium" name="envio" type="radio" value="120" checked="" required="">
+      <label for="premium">Premium(+$120).</label> <br>
+
+      <input id="express" name="envio" type="radio" value="80" required="">
+      <label for="express">Express(+$80).</label> <br>
+
+      <input id="standard" name="envio" type="radio" value="50" required="">
+      <label for="standard">Standard(+$50).</label> <br>
+
     </div>
+    <br>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Total con envío</th>
+        </tr>
+      </thead>
+      <tbody id="totalEnvio"> </tbody>
+    </table>
+
+    <br>
+
+    <!--Modal
+
+    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Comprar</button>
+    <br><br>
+
+    
+
+    <div class="modal fade" id="modalPagar">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Ingrese sus datos</h5>
+          </div>
+          <div class="modal-body">
+            <form action="index.html">
+              <div>
+                <h4>Datos del socio:</h4>
+                <input type="text" class="form-control" placeholder="Nombre"><br>
+                <input type="text" class="form-control" placeholder="Apellido"><br>
+              </div>
+              <div>
+                <h4>Datos para el envío:</h4>
+                <label for="depto">Departamento</label><br>
+                <select class="form-control" id="depto">
+                  <option>Montevideo</option>
+                  <option>Artigas</option>
+                  <option>Canelones</option>
+                  <option>Cerro Largo</option>
+                  <option>Colonia</option>
+                  <option>Durazno</option>
+                  <option>Flores</option>
+                  <option>Florida</option>
+                  <option>Lavalleja</option>
+                  <option>Maldonado</option>
+                  <option>Paysandú</option>
+                  <option>Río Negro</option>
+                  <option>Rivera</option>
+                  <option>Rocha</option>
+                  <option>Salto</option>
+                  <option>San José</option>
+                  <option>Soriano</option>
+                  <option>Tacuarembó</option>
+                  <option>Treinta y Tres</option>
+                </select><br>
+                <input type="text" class="form-control" placeholder="Dirección"> <br>
+              </div>
+  
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-block btn-success">Confirmar compra</button>    ///// arreglar el click del boton
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    -->
   </div>
+
+
+
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
