@@ -34,23 +34,24 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="navbar navbar-light site-header sticky-top py-1" style="background-color: rgb(121, 79, 219)">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown d-md-inline-block" id="info-user" style="display: none;">
-        <button id="user" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+      <a class="navbar- py-2 d-none d-md-inline-block col-2" href="home.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block col-2" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block col-2" href="products.html">Productos</a>
+
+
+
+      <div class="dropdown col-2" id="info-user" style="display: none;">
+        <button id="user" class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="my-profile.html">Perfil.</a>
-          <a id="micart" class="dropdown-item" href="cart.html">Mi carrito.</a>
+          <a class="dropdown-item" href="my-profile.html">Perfil</a>
+          <a id="micart" class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="sell.html">Vender</a>
           <button class="dropdown-item btn btn-light btn-link p-1" id="salir" style="display: none;">Salir.</button>
         </div>
-        <button class="btn-link btn text-muted" id="LogIn" style="display: none;"
-          onclick="window.location = 'index.html';">Iniciar sesión.</button>
       </div>
     </div>
   </nav>

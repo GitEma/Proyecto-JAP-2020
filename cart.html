@@ -13,10 +13,15 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
   <style>
-    #tabla {
-      border: solid 2px skyblue;
-      background-color: lightsteelblue;
+    .borde {
+      border: solid 1px lightcyan;
+    }
 
+    #tabla {
+      text-align: center;
+      max-width: 750px;
+      border: solid 2px rgb(121, 79, 219);
+      background-color: rgb(144, 162, 201)
     }
 
     .bd-placeholder-img {
@@ -38,7 +43,6 @@
       border: solid lightgreen 1px;
       background-color: white;
     }
-
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -46,19 +50,23 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="navbar navbar-light site-header sticky-top py-1" style="background-color: rgb(121, 79, 219)">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown d-md-inline-block" id="info-user" style="display: none;">
-        <button id="user" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+      <a class="navbar- py-2 d-none d-md-inline-block col-2" href="home.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block col-2" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block col-2" href="products.html">Productos</a>
+
+
+
+
+      <div class="dropdown col-2" id="info-user" style="display: none;">
+        <button id="user" class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="my-profile.html">Perfil.</a>
-          <a id="micart" class="dropdown-item" href="cart.html">Mi carrito.</a>
+          <a class="dropdown-item" href="my-profile.html">Perfil</a>
+          <a id="micart" class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="sell.html">Vender</a>
           <button class="dropdown-item btn btn-light btn-link p-1" id="salir" style="display: none;">Salir.</button>
         </div>
       </div>
@@ -67,132 +75,361 @@
 
   <!--Carrito-->
 
-  <div id="tabla" class="text-center container p-5 flex-md-row">
+
+  <div id="tabla" class="container p-5 flex-md">
     <table>
+
+
+
       <thead>
+
         <tr>
+
           <th></th>
+
           <th>Producto</th>
+
           <th>Precio</th>
+
           <th>Moneda</th>
+
           <th>Unidades</th>
-          <th>Costo</th>
+
+          <th>Costo en Pesos</th>
+
+          <th></th>
+
+
         </tr>
+
       </thead>
+
       <tbody id="cart"></tbody>
-      <tfoot>
-        <tr>
-          <td colspan="4">Costo total:</td>
-          <td id="total"> </td>
-        </tr>
-      </tfoot>
+
+
+
+
     </table>
 
     <hr>
 
-    <div class="text-left">
+    <div class="container row">
 
-      <h4>Tipo de envío</h4>
-
-      <input id="premium" name="envio" type="radio" value="120" checked="" required="">
-      <label for="premium">Premium(+$120).</label> <br>
-
-      <input id="express" name="envio" type="radio" value="80" required="">
-      <label for="express">Express(+$80).</label> <br>
-
-      <input id="standard" name="envio" type="radio" value="50" required="">
-      <label for="standard">Standard(+$50).</label> <br>
-
-    </div>
-    <br>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Total con envío</th>
-        </tr>
-      </thead>
-      <tbody id="totalEnvio"> </tbody>
-    </table>
-
-    <br>
-
-    <!--Modal
-
-    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Comprar</button>
-    <br><br>
-
-    
-
-    <div class="modal fade" id="modalPagar">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Ingrese sus datos</h5>
-          </div>
-          <div class="modal-body">
-            <form action="index.html">
-              <div>
-                <h4>Datos del socio:</h4>
-                <input type="text" class="form-control" placeholder="Nombre"><br>
-                <input type="text" class="form-control" placeholder="Apellido"><br>
-              </div>
-              <div>
-                <h4>Datos para el envío:</h4>
-                <label for="depto">Departamento</label><br>
-                <select class="form-control" id="depto">
-                  <option>Montevideo</option>
-                  <option>Artigas</option>
-                  <option>Canelones</option>
-                  <option>Cerro Largo</option>
-                  <option>Colonia</option>
-                  <option>Durazno</option>
-                  <option>Flores</option>
-                  <option>Florida</option>
-                  <option>Lavalleja</option>
-                  <option>Maldonado</option>
-                  <option>Paysandú</option>
-                  <option>Río Negro</option>
-                  <option>Rivera</option>
-                  <option>Rocha</option>
-                  <option>Salto</option>
-                  <option>San José</option>
-                  <option>Soriano</option>
-                  <option>Tacuarembó</option>
-                  <option>Treinta y Tres</option>
-                </select><br>
-                <input type="text" class="form-control" placeholder="Dirección"> <br>
-              </div>
-  
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-block btn-success">Confirmar compra</button>    ///// arreglar el click del boton
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              </div>
-  
-            </form>
-          </div>
-        </div>
+      <div class="row">
+        <div class="col-sm">Sub total:</div>
+        <strong>
+          <div class="col-sm" id="total"> </div>
+        </strong>
       </div>
-    -->
-  </div>
 
-
-
-
-
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
+
+    <hr>
+
+
+
+    <div id="payAdded"></div>
+
+
+    <!--Form para envío-->
+
+    <form id="needs-validation" novalidate>
+      <div>
+
+
+        <h4>Datos para el envío:</h4>
+
+        <!--Form para dirección-->
+
+        <div class="text-left">
+
+          <div>
+
+            <label for="ciudad">Ciudad</label>
+            <select class="form-control" id="ciudad" required>
+
+              <option selected disabled value=""> -selecciona tu ciudad.</option>
+
+              <option>19 de Abril</option>
+              <option>Aceguá</option>
+              <option>Aguas Dulces</option>
+              <option>Aiguá</option>
+              <option>Alejandro Gallinal</option>
+              <option>Algorta</option>
+              <option>Ansina</option>
+              <option>Arachania</option>
+              <option>Artigas</option>
+              <option>Artilleros</option>
+              <option>Balneario Iporá</option>
+              <option>Baltasar Brum</option>
+              <option>Barra de Valizas</option>
+              <option>Barra del Chuy</option>
+              <option>Barros Blancos</option>
+              <option>Belén</option>
+              <option>Bella Unión</option>
+              <option>Blancarena</option>
+              <option>Blanquillo</option>
+              <option>Cabo Polonio</option>
+              <option>Cañada Nieto</option>
+              <option>Canelones</option>
+              <option>Capilla del Sauce</option>
+              <option>Capurro</option>
+              <option>Cardal</option>
+              <option>Cardona</option>
+              <option>Carlos Reyles</option>
+              <option>Carmelo</option>
+              <option>Carmen</option>
+              <option>Castillos</option>
+              <option>Casupá</option>
+              <option>Cerro Chato</option>
+              <option>Chamizo</option>
+              <option>Chapicuy</option>
+              <option>Chuy</option>
+              <option>Ciudad de la Costa</option>
+              <option>Ciudad del Plata</option>
+              <option>Colonia del Sacramento</option>
+              <option>Colonia Nicolich</option>
+              <option>Colonia Palma</option>
+              <option>Colonia Valdense</option>
+              <option>Costa Azul</option>
+              <option>Costa de Oro</option>
+              <option>Curtina</option>
+              <option>Dieciocho de Julio</option>
+              <option>Doctor Francisco Soca</option>
+              <option>Dolores</option>
+              <option>Durazno</option>
+              <option>Ecilda Paullier</option>
+              <option>El Totoral del Sauce</option>
+              <option>Empalme Olmos</option>
+              <option>Estación Atlántida</option>
+              <option>Florencio Sánchez</option>
+              <option>Florida</option>
+              <option>Fraile Muerto</option>
+              <option>Fray Bentos</option>
+              <option>General Enrique Martinez</option>
+              <option>Grecco</option>
+              <option>Guichón</option>
+              <option>Isidoro Noblía</option>
+              <option>Ismael Cortinas</option>
+              <option>Ituzaingó</option>
+              <option>Joaquín Suárez</option>
+              <option>José Batlle y Ordóñez</option>
+              <option>José Enrique Rodó</option>
+              <option>José Ignacio</option>
+              <option>José Pedro Varela</option>
+              <option>Juan Lacaze</option>
+              <option>Juan Soler</option>
+              <option>Juanicó</option>
+              <option>Kiyú</option>
+              <option>La Coronilla</option>
+              <option>La Esmeralda</option>
+              <option>La Paloma</option>
+              <option>La Paloma Durazno</option>
+              <option>La Paz</option>
+              <option>La Pedrera</option>
+              <option>Lago Merín</option>
+              <option>Las Cañas</option>
+              <option>Las Piedras</option>
+              <option>Las Toscas</option>
+              <option>Lascano</option>
+              <option>Libertad</option>
+              <option>Los Cerrillos</option>
+              <option>Los Pinos</option>
+              <option>Maldonado</option>
+              <option>Mariscala</option>
+              <option>Melo</option>
+              <option>Mendoza</option>
+              <option>Mercedes</option>
+              <option>Mevir Minuano</option>
+              <option>Migues</option>
+              <option>Minas</option>
+              <option>Montes</option>
+              <option>Montevideo</option>
+              <option>Nueva Helvecia</option>
+              <option>Nueva Palmira</option>
+              <option>Nuevo Berlín</option>
+              <option>Ordeig</option>
+              <option>Pan de Azúcar</option>
+              <option>Pando</option>
+              <option>Paso de los Toros</option>
+              <option>Paysandú</option>
+              <option>Piriápolis</option>
+              <option>Playa Fomento</option>
+              <option>Progreso</option>
+              <option>Punta Ballena</option>
+              <option>Punta del Diablo</option>
+              <option>Punta del Este</option>
+              <option>Punta Rubia</option>
+              <option>Quebracho</option>
+              <option>Rafael Perazza</option>
+              <option>Raigón</option>
+              <option>Rincón</option>
+              <option>Rincon Del Bonete</option>
+              <option>Río Branco</option>
+              <option>Rivera</option>
+              <option>Rocha</option>
+              <option>Rosario</option>
+              <option>Salinas</option>
+              <option>Salto</option>
+              <option>San Carlos</option>
+              <option>San Gregorio de Polanco</option>
+              <option>San Javier</option>
+              <option>San Jorge</option>
+              <option>San José</option>
+              <option>San Luis al Medio</option>
+              <option>San Ramón</option>
+              <option>Santa Ana</option>
+              <option>Santa Bernardina</option>
+              <option>Santa Lucía</option>
+              <option>Sarandí del Yí</option>
+              <option>Sauce</option>
+              <option>Sequeira</option>
+              <option>Solís</option>
+              <option>Solís de Mataojo</option>
+              <option>Tacuarembó</option>
+              <option>Termas del Arapey</option>
+              <option>Termas del Daymán</option>
+              <option>Toledo</option>
+              <option>Tomás Gomensoro</option>
+              <option>Tranqueras</option>
+              <option>Treinta y Tres</option>
+              <option>Tupambaé</option>
+              <option>Velázquez</option>
+              <option>Vergara</option>
+              <option>Vichadero</option>
+              <option>Villa Constitución</option>
+              <option>Villa María</option>
+              <option>Villa María San José</option>
+              <option>Villa Sara</option>
+              <option>Villa Serrana</option>
+              <option>Young</option>
+              <option>Zapicán</option>
+
+            </select>
+            <div class="invalid-feedback">
+              Por favor, selecciona tu ciudad.
+            </div><br>
+
+            <input id="nombre" type="text" class="form-control" placeholder="Nombre" required pattern="[a-zA-Z]+">
+            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div><br>
+            <input id="apellido" type="text" class="form-control" placeholder="Apellido" required pattern="[a-zA-Z]+">
+            <div class="invalid-feedback">Por favor, ingresa tu apellido.</div><br>
+            <label>Dirección:</label><br>
+            <input id="calle" type="text" class="form-control" placeholder="Calle" required pattern="[a-zA-Z]+">
+            <div class="invalid-feedback">Por favor, ingresa tu calle.</div><br>
+            <input id="puerta" type="text" class="form-control" placeholder="N°de puerta" required
+              pattern="[a-zA-Z-0-9]+">
+            <div class="invalid-feedback">Por favor, ingresa tu n°de puerta</div><br><br>
+
+
+            <!--Radio Btn-->
+
+            <h4>Tipo de envío</h4>
+
+            <input id="premium" name="envio" type="radio" value="115" checked="" required="">
+            <label for="premium">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label> <br>
+
+            <input id="express" name="envio" type="radio" value="107" required="">
+            <label for="express">Express (5-8 días) - Costo del 7% sobre el subtotal.</label> <br>
+
+            <input id="standard" name="envio" type="radio" value="105" required="">
+            <label for="standard">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label> <br>
+
+
+
+          </div>
+
+          <br>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Costo total (+envío).</th>
+              </tr>
+            </thead>
+            <tbody id="totalEnvio"> </tbody>
+          </table>
+
+
+          <br>
+
+          <!--Modal Btn--->
+
+          <div>
+
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPago">Forma de
+              Pago.</button>
+            <br><br>
+            <div class="invalid-feedback">
+              Debes seleccionar un método de pago.
+            </div>
+          </div>
+          <!----->
+    </form>
+
+
   </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+
+  <br>
+
+  <!--Modal inside--->
+
+  <div class="modal fade" id="modalPago">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ingrese sus datos</h5>
+        </div>
+        <div class="modal-body">
+
+
+          <form action="home.html" novalidate>
+
+            <h4>Forma de Pago:</h4>
+            <label for="payMethod"></label><br>
+            <select class="form-control" id="payMethod" required>
+              <option selected disabled value=""> seleccionar método </option>
+              <option value="Tarjeta">Tarjeta de Crédito/Débito.</option>
+              <option value="Transferencia">Transferencia bancaria.</option>
+
+            </select><br>
+            <input id="numTarj" type="text" class="form-control" placeholder="n° de tarjeta" required pattern="[0-9]+">
+            <br>
+            <div class="invalid-feedback">
+              Debes ingresar tus datos para el pago
+            </div><br>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" id="addPayment" class="btn btn-success">Pagar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!----->
+
+
+
+    <!--Spinner-->
+
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

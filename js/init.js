@@ -4,7 +4,7 @@ const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/12
 const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
 const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
-const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/654.json";
+const CART_INFO_URL = /*"https://japdevdep.github.io/ecommerce-api/cart/987.json"*/ "https://japdevdep.github.io/ecommerce-api/cart/654.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 var showSpinner = function () {
@@ -49,17 +49,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let user = document.getElementById('user');
   let salir = document.getElementById('salir')
   let iniciar = document.getElementById('LogIn')
-  let cart = document.getElementById('micart')
 
   if (userLogged) {
     userLogged = JSON.parse(userLogged);
-    user.innerText = user.innerText + 'User Logged In: ' + userLogged.email;
+    user.innerText = user.innerText + 'Usurio logueado: ' + userLogged.email;
     infoUser.style = "display: inline-block";
     user.style = "display: inline-block"
     
     salir.style = "display: inline-block"
     
-  } else { iniciar.style = "display: inline-block;"; }
+  } else { iniciar.style = "display: inline-block;";
+
+let debeiniciar = ""
+
+debeiniciar = 
+'Iniciar sesión.'
+
+iniciar.innerHTML = debeiniciar;}
 
   document.getElementById('salir').addEventListener("click", function (e) {
     localStorage.removeItem('User-Logged');

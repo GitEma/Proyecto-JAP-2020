@@ -227,3 +227,15 @@ a.custom-card:hover {
   background-color: lightcyan;
   padding: 15px;
 }
+
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  transition: all 1.5s ease;
+}
+
+.inner:hover img{
+  transform: scale(1.2);
+}
