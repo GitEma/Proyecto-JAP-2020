@@ -133,7 +133,7 @@
 
     <!--Form para envío-->
 
-    <form id="needs-validation" novalidate>
+    <form class="needs-validation" novalidate>
       <div>
 
 
@@ -350,27 +350,25 @@
             <tbody id="totalEnvio"> </tbody>
           </table>
 
-
           <br>
-
-          <!--Modal Btn--->
-
-          <div>
-
-            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPago">Forma de
-              Pago.</button>
-            <br><br>
-            <div class="invalid-feedback">
-              Debes seleccionar un método de pago.
-            </div>
-          </div>
-          <!----->
+          
     </form>
-
-
   </div>
 
-  <br>
+  <!--Modal Btn--->
+
+  <div>
+
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPago">Forma
+      de
+      Pago.</button>
+    <br><br>
+    <div class="invalid-feedback">
+      Debes seleccionar un método de pago.
+    </div>
+  </div>
+  <!----->
+
 
   <!--Modal inside--->
 
@@ -383,7 +381,7 @@
         <div class="modal-body">
 
 
-          <form action="home.html" novalidate>
+          <form class="needs-validation" novalidate>
 
             <h4>Forma de Pago:</h4>
             <label for="payMethod"></label><br>
@@ -398,13 +396,15 @@
             <div class="invalid-feedback">
               Debes ingresar tus datos para el pago
             </div><br>
+
+            <div class="modal-footer">
+              <button type="submit" id="addPayment" class="btn btn-success">Pagar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
           </form>
         </div>
 
-        <div class="modal-footer">
-          <button type="submit" id="addPayment" class="btn btn-success">Pagar</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        </div>
+
 
       </div>
     </div>

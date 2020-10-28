@@ -28,7 +28,7 @@ function showCart(array) {
 
         let cart = array[i];
 
-        
+
 
         //----------conversion-------------------------
 
@@ -106,7 +106,7 @@ function borrarItem(i) {
         cartArray.splice(i, 1) //el segundo parametro es la cantidad de obj que queremos borrar.
         showCart(cartArray);
     } else {
-        
+
         document.getElementById('tabla').innerHTML = `
                                                  
                                                      
@@ -144,33 +144,61 @@ document.addEventListener("DOMContentLoaded", function (e) {
         });
     }
 
-    
 
 
-    
+
+
     // Example starter JavaScript for disabling form submissions if there are invalid fields
 
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let form = document.getElementById('needs-validation');
+    /* Fetch all the forms we want to apply custom Bootstrap validation styles to
+    let form = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
 
     form.addEventListener('submit', function (event) {
+        
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
         form.classList.add('was-validated');
     })
+      */
+
+
+    //////////////////////////////////
+
+
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+
+
+    /////////////////////////////////
 
 
 
     let payAdded = document.getElementById('addPayment');
 
-    payAdded.addEventListener('click', function(e) {
+    payAdded.addEventListener('click', function (e) {
 
         let content = "";
-        
+
         let payMethod = document.getElementById('payMethod').value;
 
         let tarjeta = document.getElementById('numTarj').value;
@@ -180,15 +208,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (payMethod === '' || tarjeta === '') {
             camposCheck = false;
 
-            
+
 
         }
 
         if (camposCheck) {
 
-        
 
-        content += `
+
+            content += `
 
                      <hr><div class="alert-success"><strong>Forma de pago añadida:  ${payMethod} </strong></div><hr>
         
