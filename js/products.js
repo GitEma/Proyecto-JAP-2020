@@ -64,7 +64,7 @@ function showCategoriesList() {
             if (buscar == undefined || category.name.toLowerCase().indexOf(buscar) != -1) {
 
 
-                htmlContentToAppend += `
+                htmlContentToAppend += /*
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
@@ -73,7 +73,11 @@ function showCategoriesList() {
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ category.name + `</h4>
+
+
                             <small class="text-muted">` + category.soldCount + ` artículos vendidos.</small>
+
+
                         </div>
                         <p class="mb-1">` + category.description + `</p>
                         <div class="precio">
@@ -83,6 +87,28 @@ function showCategoriesList() {
                     </div>
                 </div>
             </a>
+            */
+
+            `
+<div class="col mb-1" style="max-width: 20rem;">
+    <div class="card bg-dark border-primary">
+      <div class="inner"><img src="${category.imgSrc}" class="card-img-top" alt="..."></div>
+
+      <div class="card-body">
+         <div>
+             <h5 class="card-title">${category.name}</h5>
+             <small style="color: lightblue">${category.soldCount} articulos vendidos.</small><br>
+         </div>
+            <p class="card-text-white">${category.description}</p>
+      </div>
+
+
+      <div class="card-footer bg-transparent border-primary">
+         <div class="text-right"><strong>${category.cost} ${category.currency}</strong></div><hr>
+         <a href="product-info.html" class="btn btn-md btn-primary btn-block">Ver producto</a></div>
+
+    </div>
+</div>         
             `
             }
         }

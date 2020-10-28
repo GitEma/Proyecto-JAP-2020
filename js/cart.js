@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     /* Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let form = document.getElementsByClassName('needs-validation');
+    let form = document.getElementById('needs-validation');
     // Loop over them and prevent submission
 
     form.addEventListener('submit', function (event) {
