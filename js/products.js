@@ -90,16 +90,17 @@ function showCategoriesList() {
             */
 
             `
-<div class="col mb-1" style="max-width: 20rem;">
+<div class="col-sm-1 col-md-2 col-lg-3 mb-1" style="max-width: 20rem;">
     <div class="card bg-dark border-primary">
-      <div class="inner"><img src="${category.imgSrc}" class="card-img-top" alt="..."></div>
+      <div class="inner"><img src="${category.imgSrc}" class="img card-img-top" alt="..."></div>
 
       <div class="card-body">
-         <div>
+         <div class="card-header border-primary">
              <h5 class="card-title">${category.name}</h5>
-             <small style="color: lightblue">${category.soldCount} articulos vendidos.</small><br>
+             
          </div>
-            <p class="card-text-white">${category.description}</p>
+             <div class="text-right"><small style="color: lightblue">${category.soldCount} articulos vendidos.</small></div>
+             <p class="card-text-white">${category.description}</p>
       </div>
 
 
