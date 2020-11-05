@@ -39,10 +39,11 @@
       <a class="navbar- py-2 d-none d-md-inline-block col-2" href="home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block col-2" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block col-2" href="products.html">Productos</a>
-      
+
 
 
       <div class="dropdown col-2" id="info-user" style="display: none;">
+
         <button id="user" class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;">
         </button>
@@ -55,39 +56,89 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container tab-pane fade active show" id="account-general">
+
+    <div class="card-body media align-items-center">
+      <img src="./img/no pic.png" alt="" class="img-raised rounded-circle img-fluid" id="profilePic">
+
+      <div class="media-body ml-4">
+        <label for="desdeweb">Cargar imagen desde la web: </label>
+        <input type="url" class="form-control" placeholder="Pega aquí la url." id="desdeWeb">
+      </div>
+
+      <br>
+
+      <!--
+            <div class="media-body ml-4">
+              <label class="btn btn-outline-primary">
+                Cargar imagen
+                <input type="file" class="account-settings-fileinput">
+              </label> &nbsp;
+              <button type="button" class="btn btn-secondary md-btn-flat">Reset</button>
+
+            </div>
+           -->
+
     </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+    <hr class="border-light m-0">
+
+    <div class="card-body">
+      <div class="form-group">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input id="nombre" type="text" class="form-control mb-1" placeholder="Nombre" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input id="apellido" type="text" class="form-control" placeholder="Apellido" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="edad" class="form-label">Edad</label>
+        <input id="edad" type="number" class="form-control" placeholder="Edad" value="" pattern="[0-9]+" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">E-mail</label>
+        <input id="email" type="email" class="form-control mb-1" placeholder="ingresa_tu@mail.com" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Número de teléfono/celular</label>
+        <input id="phone" type="text" class="form-control mb-1" placeholder="(+598) xx xxx xxx" value="" required>
+      </div>
+
+      <div class="text-right mt-3">
+        <button type="button" id="guardar" class="btn btn-primary">Guardar cambios</button>
+        <button type="button" id="clean" class="btn btn-secondary" data-dismiss="">Limpiar</button>
+      </div>
+
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+
+
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div class="alert fade alert-success" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
 </body>
 
 </html>

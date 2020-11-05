@@ -52,7 +52,7 @@ function showProductInfo(producto, arrayComments) {
             `;
 
     imgs += `
-             <div id="carousel" class="carousel slide" data-ride="carousel">
+             <div id="carousel" class="carousel slide" data-ride="carousel" style="margin-left: auto; margin-right: auto;">
                  <ol class="carousel-indicators">
                      <li data-target="#carousel" data-slide-to="0" class="active"></li>
                      <li data-target="#carousel" data-slide-to="1"></li>
@@ -64,7 +64,7 @@ function showProductInfo(producto, arrayComments) {
                  <div class="carousel-inner">
                          
                      <div class="carousel-item active">
-                         <img src="${producto.images[0]}" class="d-block w-100" alt="...">
+                         <img src="${producto.images[0]}" class="d-block" alt="...">
                          <div class="carousel-caption d-none d-md-block">
                              <h5></h5>
                              <p></p>
@@ -72,7 +72,7 @@ function showProductInfo(producto, arrayComments) {
                      </div>
 
                      <div class="carousel-item">
-                         <img src="${producto.images[1]}" class="d-block w-100" alt="...">
+                         <img src="${producto.images[1]}" class="d-block" alt="...">
                          <div class="carousel-caption d-none d-md-block">
                              <h5></h5>
                              <p></p>
@@ -80,7 +80,7 @@ function showProductInfo(producto, arrayComments) {
                      </div>
 
                      <div class="carousel-item">
-                         <img src="${producto.images[2]}" class="d-block w-100" alt="...">
+                         <img src="${producto.images[2]}" class="d-block" alt="...">
                          <div class="carousel-caption d-none d-md-block">
                              <h5></h5>
                               <p></p>
@@ -88,7 +88,7 @@ function showProductInfo(producto, arrayComments) {
                      </div>
       
                      <div class="carousel-item">
-                         <img src="${producto.images[3]}" class="d-block w-100" alt="...">
+                         <img src="${producto.images[3]}" class="d-block" alt="...">
                           <div class="carousel-caption d-none d-md-block">
                              <h5></h5>
                              <p></p>
@@ -96,7 +96,7 @@ function showProductInfo(producto, arrayComments) {
                      </div>
 
                      <div class="carousel-item">
-                         <img src="${producto.images[4]}" class="d-block w-100" alt="...">
+                         <img src="${producto.images[4]}" class="d-block" alt="...">
                          <div class="carousel-caption d-none d-md-block">
                              <h5></h5>
                              <p></p>

@@ -144,31 +144,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         });
     }
 
-
-
-
-
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-
-
-    /* Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let form = document.getElementById('needs-validation');
-    // Loop over them and prevent submission
-
-    form.addEventListener('submit', function (event) {
-        
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-    })
-      */
-
-
-    //////////////////////////////////
-
-
     (function() {
         'use strict';
         window.addEventListener('load', function() {
