@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             passedValidation = false;
         } else {
             nombre.classList.remove("is-invalid");
-            nombre.classList.add("was-validated");
+            
         }
 
         if (apellido.value === '') {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             passedValidation = false;
         } else {
             apellido.classList.remove("is-invalid");
-            apellido.classList.add("was-validated");
+            
         }
 
         if (edad.value === '') {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             passedValidation = false;
         } else {
             edad.classList.remove("is-invalid");
-            edad.classList.add("was-validated");
+            
         }
 
         if (mail.value === '') {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             passedValidation = false;
         } else {
             mail.classList.remove("is-invalid");
-            mail.classList.add("was-validated");
+            
         }
 
         if (phone.value === '') {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             passedValidation = false;
         } else {
             phone.classList.remove("is-invalid");
-            phone.classList.add("was-validated");
+            
         }
 
         if (passedValidation) {

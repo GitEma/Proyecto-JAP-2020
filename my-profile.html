@@ -87,11 +87,11 @@
     <div class="card-body">
       <div class="form-group">
         <label for="nombre" class="form-label">Nombre</label>
-        <input id="nombre" type="text" class="form-control mb-1" placeholder="Nombre" value="" required>
+        <input id="nombre" type="text" class="form-control mb-1" placeholder="Nombre" value="" pattern="[a-zA-Z]+" required>
       </div>
       <div class="form-group">
         <label for="apellido" class="form-label">Apellido</label>
-        <input id="apellido" type="text" class="form-control" placeholder="Apellido" value="" required>
+        <input id="apellido" type="text" class="form-control" placeholder="Apellido" value="" pattern="[a-zA-Z]+" required>
       </div>
       <div class="form-group">
         <label for="edad" class="form-label">Edad</label>
@@ -103,12 +103,12 @@
       </div>
       <div class="form-group">
         <label for="phone" class="form-label">Número de teléfono/celular</label>
-        <input id="phone" type="text" class="form-control mb-1" placeholder="(+598) xx xxx xxx" value="" required>
+        <input id="phone" type="text" class="form-control mb-1" placeholder="(+598) xx xxx xxx" value="">
       </div>
 
       <div class="text-right mt-3">
         <button type="button" id="guardar" class="btn btn-primary">Guardar cambios</button>
-        <button type="button" id="clean" class="btn btn-secondary" data-dismiss="">Limpiar</button>
+        <button type="button" id="clean" class="btn btn-secondary">Limpiar</button>
       </div>
 
     </div>
